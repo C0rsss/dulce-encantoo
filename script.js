@@ -174,3 +174,58 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ==========================
+// Menú hamburguesa responsive
+// ==========================
+const menuBtn = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+if (menuBtn && navMenu) {
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+  });
+}
+
+// Cerrar el menú al hacer clic en un enlace
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      menuBtn.classList.remove('active');
+    }
+  });
+});
+
+// ==========================
+// Resaltar enlace activo al hacer scroll
+// ==========================
+const sectionIds = ['#hero', '#products', '#features', '#testimonials', '#faq', '#contact'];
+const linksMap = new Map();
+
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+  linksMap.set(link.getAttribute('href'), link);
+});
+
+const activeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const id = `#${entry.target.id}`;
+    const link = linksMap.get(id);
+    if (!link) return;
+    if (entry.isIntersecting) {
+      // Limpiar clase activa de todos
+      linksMap.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '-30% 0px -60% 0px', // favorece la sección centrada en viewport
+  threshold: 0.1
+});
+
+sectionIds.forEach(id => {
+  const el = document.querySelector(id);
+  if (el) activeObserver.observe(el);
+});
