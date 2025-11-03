@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Encanto | Repostería Artesanal</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">🧁 Dulce Encanto</div>
+        <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#features">Nosotros</a></li>
+            <li><a href="#testimonials">Testimonios</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="deco deco1">🍩</div>
+        <div class="deco deco2">🍪</div>
+        <div class="deco deco3">🧁</div>
+        
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>
+                    Endulza tus
+                    <span class="highlight">Momentos Especiales</span>
+                </h1>
+                <p>Repostería artesanal hecha con amor, ingredientes premium y dedicación en cada detalle. Hacemos realidad tus sueños más dulces.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Haz tu Pedido</a>
+                    <a href="#products" class="btn-secondary">Ver Productos</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-cake">🎂</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="section-header">
+            <h2>Nuestras Delicias</h2>
+            <p>Cada creación está hecha con ingredientes frescos y mucho amor</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card" onclick="openModal('Tortas Personalizadas', '🎂', 'Diseños únicos para hacer de tu celebración un momento inolvidable. Sabores y decoraciones a tu gusto.')">
+                <div class="product-image">🎂</div>
+                <div class="product-info">
+                    <h3>Tortas Personalizadas</h3>
+                    <p>Diseños únicos para hacer de tu celebración un momento inolvidable. Sabores y decoraciones a tu gusto.</p>
+                    <div class="product-footer">
+                        <span class="price">$45.000</span>
+                        <button class="order-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="openModal('Cupcakes Artesanales', '🧁', 'Pequeñas joyas de sabor perfectas para cualquier ocasión. Disponibles en 12 deliciosos sabores.')">
+                <div class="product-image">🧁</div>
+                <div class="product-info">
+                    <h3>Cupcakes Artesanales</h3>
+                    <p>Pequeñas joyas de sabor perfectas para cualquier ocasión. Disponibles en 12 deliciosos sabores.</p>
+                    <div class="product-footer">
+                        <span class="price">$3.500</span>
+                        <button class="order-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="openModal('Galletas Gourmet', '🍪', 'Crujientes por fuera, suaves por dentro. Perfectas para regalar o disfrutar con un café.')">
+                <div class="product-image">🍪</div>
+                <div class="product-info">
+                    <h3>Galletas Gourmet</h3>
+                    <p>Crujientes por fuera, suaves por dentro. Perfectas para regalar o disfrutar con un café.</p>
+                    <div class="product-footer">
+                        <span class="price">$25.000</span>
+                        <button class="order-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="openModal('Tartas & Pies', '🥧', 'Recetas tradicionales con un toque especial. Frutas frescas y masas artesanales.')">
+                <div class="product-image">🥧</div>
+                <div class="product-info">
+                    <h3>Tartas & Pies</h3>
+                    <p>Recetas tradicionales con un toque especial. Frutas frescas y masas artesanales.</p>
+                    <div class="product-footer">
+                        <span class="price">$38.000</span>
+                        <button class="order-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="openModal('Postres Especiales', '🍰', 'Tiramisú, cheesecake, mousse y más. Perfectos para consentirte o sorprender a alguien especial.')">
+                <div class="product-image">🍰</div>
+                <div class="product-info">
+                    <h3>Postres Especiales</h3>
+                    <p>Tiramisú, cheesecake, mousse y más. Perfectos para consentirte o sorprender a alguien especial.</p>
+                    <div class="product-footer">
+                        <span class="price">$8.500</span>
+                        <button class="order-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="openModal('Donas Artesanales', '🍩', 'Esponjosas y con coberturas creativas. Cada día tenemos sabores nuevos y sorprendentes.')">
+                <div class="product-image">🍩</div>
+                <div class="product-info">
+                    <h3>Donas Artesanales</h3>
+                    <p>Esponjosas y con coberturas creativas. Cada día tenemos sabores nuevos y sorprendentes.</p>
+                    <div class="product-footer">
+                        <span class="price">$4.200</span>
+                        <button class="order-btn">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Galería -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalImage" class="modal-image"></div>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+            <button class="btn-primary" onclick="orderProduct()">Haz tu Pedido</button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>Calidad, pasión y dedicación en cada dulce que creamos</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">🌟</span>
+                <h3>100% Artesanal</h3>
+                <p>Cada producto es hecho a mano con amor y dedicación por nuestros maestros reposteros</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🥚</span>
+                <h3>Ingredientes Premium</h3>
+                <p>Usamos solo los mejores y más frescos ingredientes seleccionados cuidadosamente</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎨</span>
+                <h3>Diseños Únicos</h3>
+                <p>Personalizamos cada pedido según tus preferencias y ocasión especial</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🚚</span>
+                <h3>Entrega a Domicilio</h3>
+                <p>Llevamos nuestras delicias hasta la puerta de tu casa con el mayor cuidado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 id="clientes">0</h3>
+                <p>Clientes Felices</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="pedidos">0</h3>
+                <p>Pedidos Completados</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="productos">0</h3>
+                <p>Productos Diferentes</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="años">0</h3>
+                <p>Años de Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p>Sus sonrisas son nuestra mayor recompensa</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"La torta de mi boda fue simplemente espectacular. Todos los invitados quedaron maravillados. ¡Gracias Dulce Encanto por hacer de mi día algo mágico!"</p>
+                <p class="testimonial-author">- María José P.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Los cupcakes son lo más delicioso que he probado. Los pedimos para cada celebración familiar y nunca defraudan."</p>
+                <p class="testimonial-author">- Carlos R.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"La atención personalizada y el sabor de sus productos los hace únicos. ¡Los recomiendo con los ojos cerrados!"</p>
+                <p class="testimonial-author">- Ana Lucía M.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="section-header">
+            <h2>Preguntas Frecuentes</h2>
+            <p>Resolvemos tus dudas</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>¿Cuánto tiempo antes debo hacer mi pedido?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Para tortas personalizadas recomendamos hacer el pedido con mínimo 3 días de anticipación. Para productos más simples como cupcakes o galletas, 24 horas son suficientes.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>¿Hacen envíos a domicilio?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, realizamos envíos a domicilio en Cúcuta y áreas cercanas. El costo del envío varía según la zona y el tamaño del pedido.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>¿Puedo personalizar mi pedido?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>¡Por supuesto! Personalizamos todos nuestros productos según tus preferencias: sabores, colores, decoraciones, mensajes, etc.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>¿Usan ingredientes sin gluten o sin azúcar?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, ofrecemos opciones sin gluten y sin azúcar. Por favor indícanos tus necesidades dietéticas al hacer tu pedido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>¡Hagamos realidad tus sueños dulces!</h2>
+            <p>Cuéntanos qué necesitas y crearemos algo especial para ti</p>
+        </div>
+        <div class="contact-container">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" name="telefono" placeholder="+57 300 123 4567" required>
+                </div>
+                <div class="form-group">
+                    <label>Cuéntanos sobre tu pedido</label>
+                    <textarea name="mensaje" placeholder="Tipo de producto, fecha del evento, cantidad, diseño especial, sabores preferidos..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem;">Enviar Pedido 🎂</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573504424191?text=Hola%20Dulce%20Encanto%2C%20quiero%20hacer%20un%20pedido" target="_blank" class="whatsapp-float">
+        💬
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dulce Encanto</h3>
+                <p>Endulzando vidas desde 2020 con repostería artesanal de la más alta calidad.</p>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="WhatsApp">💬</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📍 Cúcuta, Norte de Santander</p>
+                <p>📞 +57 300 123 4567</p>
+                <p>✉️ contacto@dulceencanto.com</p>
+                <p>🕐 Lun - Sáb: 8am - 6pm</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="#products">Nuestros Productos</a></p>
+                <p><a href="#features">Sobre Nosotros</a></p>
+                <p><a href="#contact">Hacer un Pedido</a></p>
+                <p><a href="#">Términos y Condiciones</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dulce Encanto. Todos los derechos reservados. Hecho con ❤️ y mucho azúcar por George Rojas.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
